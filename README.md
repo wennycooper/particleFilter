@@ -1,5 +1,5 @@
 # particleFilter
-This is the 2D particle filter example code in javascript 
+This is a 2D particle filter example code in javascript 
 
 ## Installation
 * git clone this repo
