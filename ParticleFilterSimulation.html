@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Particle Filter Simulation</title>
+	<script type="text/javascript" src="./jquery-1.8.2.min.js"></script>
+	
+<!-- jQuery UI sliders: -->
+<link rel="stylesheet" href="./sunny.css">
+<script src="./jquery-ui-slider.js"></script>
+
+
+<!-- main page stylesheet: updated style for sliders -->
+<link rel="stylesheet" href="./style.css">
+
+<!-- main page Javascript code: contains slider code -->
+<script type="text/javascript" src="./script.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+<div id="container">
+<div id="content">
+
+<center>
+<h1>Particle Filter Simulation</h1>
+</center>
+
+<br> 
+<!-- Particle Filter Canvas -->
+<center>
+<p><canvas id="pf_canvas" width="860" height="540" style="background: #000000" onmousemove="updatePosition(event);" onmousedown="toggleMove(event);">
+Your browser does not support the canvas element.
+</canvas></p>
+</center>
+
+<!-- Particle Filter code -->
+<script type="text/javascript" src="./particleFilter.js"></script>
+
+<p>
+<center>
+	Move your mouse around the screen to move the robot.
+	Click to
+	<b><span id="lock_unlock_pos" style="color: red;">lock</span></b>
+	the robot's position.
+</center>
+</p>
+
+
+<p>
+<center>
+	<button onclick="toggleAnimation();" title="Pause and Resume Animation" style="width: 110px;">
+		<font color="#006600"><b><span id="on_or_off">Pause</span></b></font></button>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<button onclick="resetValues();" title="Reset Everything to Default">
+		<font color="#990000"><b>Restore Default Values</b></font></button>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<button onclick="restart();" title="Clear Particles and Restart Animation" style="width: 110px;">
+		<font color="#990000"><b>Restart</b></font></button>
+</center>
+</p>
+
+<p></p><center><table id="pf_options">
+<tbody><tr>
+	<td>
+		<b>Number of Particles:</b>
+		<div style="width:300px;" id="number_slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 10%;"></a></div>
+		<div id="number_val">100</div>
+	</td>
+	<td>
+		<b>Animation Speed (FPS):</b>
+		<div style="width:300px;" id="speed_slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 10%;"></a></div>
+		<div id="speed_val">10 FPS</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<b>Random Walk Frequency:</b>
+		<div style="width:300px;" id="rw_freq_slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 10%;"></a></div>
+		<div id="rw_freq_val">Every 5 Frames</div>
+	</td>
+	<td>
+		<b>Random Walk Max Distance:</b>
+		<div style="width:300px;" id="rw_dist_slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" style="left: 10%;"></a></div>
+		<div id="rw_dist_val">40</div>
+	</td>
+</tr>
+</tbody></table></center><p></p>
+
+<p>
+<center>
+<b>Robot Position: </b> (<span id="positionText">300, 200</span>)
+</center>
+</p>
+
+<br><br><br>
+</div>
+</div>
+

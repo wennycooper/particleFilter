@@ -1,0 +1,22 @@
+/* Stylesheet for Particle Filter page:
+ *	- style options for jQuery UI sliders
+ *	- styling for options, including buttons, etc.
+ */
+
+
+/* jQuery UI Slider customizations */
+.ui-slider {
+	height: 10px;
+}
+.ui-slider .ui-slider-handle {
+	width: 12px;
+	margin-left: -6px;
+	height: 12px;
+	margin-top: 3px;
+}
+
+#pf_options td {
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
